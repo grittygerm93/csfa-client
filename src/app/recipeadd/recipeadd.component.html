@@ -1,0 +1,50 @@
+<div class="container">
+  <h2>Add items</h2>
+  <form [formGroup]="form" (ngSubmit)="add()" fxLayout="column" fxLayoutAlign="start">
+    <mat-form-field>
+      <mat-label>title</mat-label>
+      <input type="text" formControlName="title" matInput>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="start center" style="margin-left: 20px;">
+      <mat-label>ingredients</mat-label>
+      <button mat-icon-button color="primary" (click)="addIngredient()" type="button">
+        <mat-icon>add_box</mat-icon>
+      </button>
+    </div>
+
+    <div formArrayName="ingredients" *ngFor="let ingredient of formArr.controls; let i = index;">
+      <mat-form-field>
+        <!--        <input type="text" matInput #i (input)="updateFormValidity(i, ingredient)" [formControlName]="i">-->
+        <input type="text" matInput [formControlName]="i">
+      </mat-form-field>
+      <button mat-icon-button color="accent" (click)="removeIngredient(ingredient)">
+        <mat-icon>backspace</mat-icon>
+      </button>
+    </div>
+
+    <mat-form-field>
+      <mat-label>instructions</mat-label>
+      <textarea formControlName="instructions" matInput
+                rows="5" style="resize: none"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image</mat-label>
+      <input type="text" formControlName="image" matInput>
+      <mat-hint>provide a url</mat-hint>
+    </mat-form-field>
+    <br>
+    <div>
+      <button mat-icon-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back_ios_new</mat-icon>
+        Back
+      </button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="primary" type="submit" [disabled]="form.invalid">Add
+      </button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="container" *ngIf="isLoaded">
+  <h2>{{recipe.title}}</h2>
+  <img src="{{recipe.image}}" alt="" style="width: 300px">
+  <h4>Ingredients</h4>
+  <ol>
+    <li *ngFor="let item of recipe.ingredients">{{item}}</li>
+  </ol>
+  <h4>Instructions</h4>
+  <p>{{recipe.instruction}}</p>
+  <button mat-icon-button color="primary" [routerLink]="['/']">
+    <mat-icon>arrow_back_ios_new</mat-icon> Back
+  </button>
+</div>
+
+
+

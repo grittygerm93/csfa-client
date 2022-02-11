@@ -10,11 +10,24 @@ import {HttpClientModule} from "@angular/common/http";
 import { TemplateComponent } from './template/template.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
+import { RecipelistComponent } from './recipelist/recipelist.component';
+import { RecipeaddComponent } from './recipeadd/recipeadd.component';
+import { RecipedetailComponent } from './recipedetail/recipedetail.component';
+import {RecipeService} from "./services/recipe.service";
+import {MatListModule} from "@angular/material/list";
+import {FlexModule} from "@angular/flex-layout";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateComponent
+    TemplateComponent,
+    RecipelistComponent,
+    RecipeaddComponent,
+    RecipedetailComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +36,15 @@ import {MatIconModule} from "@angular/material/icon";
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    FlexModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [GuardService],
+  providers: [GuardService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

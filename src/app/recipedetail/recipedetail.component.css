@@ -1,0 +1,16 @@
+.container {
+  width: 80%;
+ padding-bottom: 50px;
+  margin-left: 30px;
+}
+
+h4 {
+  color: dodgerblue;
+}
+
+h2 {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+

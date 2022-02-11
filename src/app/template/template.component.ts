@@ -9,7 +9,8 @@ import {Deactivating} from "../models";
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.css']
 })
-export class TemplateComponent implements OnInit, Deactivating {
+export class TemplateComponent implements OnInit {
+// export class TemplateComponent implements OnInit, Deactivating {
 
   form: FormGroup;
 

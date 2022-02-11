@@ -1,0 +1,9 @@
+<div fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="5px">
+  <h2>Recipe List</h2>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of rList" (click)="onClick(item)" fxLayoutAlign="center center">
+      {{item.title}}
+    </mat-list-item>
+  </mat-list>
+  <button mat-raised-button color="primary" [routerLink]="['/add']">Add</button>
+</div>
